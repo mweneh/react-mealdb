@@ -47,7 +47,8 @@ export default function Search(){
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="search" className="form-label">SEARCH MEAL</label>
-                    <input type="text" className="form-control" id="search" name="search" value={searchItem} onChange={handleSearch}/>
+                    <input type="text" className="form-control" id="search" name="search" value={searchItem} 
+                    onChange={handleSearch}/>
                 </div>
             </form>
             <h3 className="mt-4">SEARCH RESULTS ({results})</h3>

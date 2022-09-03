@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MealCard from "../mealcard/MealCard";
 
-const BREAKFAST_MEALS = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast"
+const lunch = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
 
 export default function Home(){
 
@@ -9,7 +9,7 @@ export default function Home(){
 
     // load items from internet
     const mealFetcher = () => {
-        fetch(BREAKFAST_MEALS)
+        fetch(lunch)
             .then((response) => response.json())
             .then((data) => {
                 setMeals(data.meals)
@@ -20,7 +20,11 @@ export default function Home(){
         mealFetcher, []
     )
 
-    let mealCards = meals.map((meal) => (<MealCard mealName={meal.strMeal} mealThumbnail={meal.strMealThumb} mealId={meal.idMeal} key={meal.idMeal}/>))
+    let mealCards = meals.map((meal) => (<MealCard 
+        mealName={meal.strMeal} 
+        mealThumbnail={meal.strMealThumb} 
+        mealId={meal.idMeal} 
+        key={meal.idMeal}/>))
 
     return(
         <div className="container">

@@ -29,17 +29,18 @@ export default function MealDetails(){
     }
 
     useEffect(
-        mealFetcher, []
+        mealFetcher, [actualSearch]
     )
 
     return(
         <div className="container">
             <center>
-                <img src={image} style={{height: 200 + 'px', width: 200 + 'px',}} />
+                <img src={image} style={{height: 200 + 'px', width: 200 + 'px',}} alt={title}/>
                 <h4>{title}</h4>
                 <h6 className="badge bg-success">{category}</h6>
                 <p>{instructions}</p>
             </center>
+            
         </div>
     )
 
